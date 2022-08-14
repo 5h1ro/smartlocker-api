@@ -21,6 +21,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->get('/',  'ResiController@index');
         $router->post('/store',  'ResiController@store');
         $router->get('/detail/{id}',  'ResiController@show');
+        $router->delete('/delete/{id}',  'ResiController@destroy');
     });
     $router->group(['prefix' => 'kurir'], function () use ($router) {
         $router->get('/',  'KurirController@index');

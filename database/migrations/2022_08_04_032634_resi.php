@@ -24,6 +24,7 @@ class Resi extends Migration
             $table->integer('status')->default(0);
             $table->integer('aktif')->default(1);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

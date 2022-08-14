@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Resi extends Model
 {
+
+    use SoftDeletes;
 
     public function getStatusAttribute($value)
     {
@@ -34,6 +37,8 @@ class Resi extends Model
 
     protected $table = 'resi';
 
+    protected $dates = ['deleted_at'];
+
     protected $primaryKey = 'no';
 
     protected $fillable = [
@@ -46,6 +51,7 @@ class Resi extends Model
         'status',
         'aktif'
     ];
+
     protected $hidden = [
         'no',
     ];

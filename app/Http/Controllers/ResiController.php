@@ -111,6 +111,13 @@ class ResiController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $resi = Resi::find($id);
+        $resi->delete();
+        $resi = Resi::all();
+        return response()->json([
+            'success' => true,
+            'data'    => $resi,
+        ]);
     }
 }
